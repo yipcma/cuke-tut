@@ -6,4 +6,5 @@
       console.log('running!');
       this.server.call('addUser', {email:"bob@example.com"});
     });
+    
   };

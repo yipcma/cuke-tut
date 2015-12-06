@@ -1,6 +1,14 @@
 module.exports = function() {
   this.Given(/^I am logged in$/, function () {
     // Write the automation code here
+    browser.url(process.env.ROOT_URL);
+    browser.waitForExist('body *');
+    browser.waitForVisible('body *');
+    browser.waitForExist('#login-sign-in-link');
+    browser.click('#login-sign-in-link');
+    browser.setValue('#login-email', 'bob@example.com');
+    browser.setValue('#login-password', 'testtest');
+    browser.click('#login-buttons-password');
     pending();
   });
 
