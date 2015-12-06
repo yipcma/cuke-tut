@@ -14,10 +14,13 @@ module.exports = function() {
 
   this.When(/^I fill in the name with "([^"]*)"$/, function (arg1) {
     // Write the automation code here
+    browser.waitForVisible('#name');
+    browser.setValue('#name', 'Alpha');
     pending();
   });
   this.When(/^I click the button "([^"]*)"$/, function (arg1) {
     // Write the automation code here
+    browser.click("#createWidget");
     pending();
   });
 
