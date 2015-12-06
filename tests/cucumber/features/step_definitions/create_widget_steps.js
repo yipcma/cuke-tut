@@ -26,6 +26,9 @@ module.exports = function() {
 
   this.Then(/^I should see a widget named "([^"]*)"$/, function (arg1) {
     // Write the automation code here
+    browser.waitForExist('.widget-name');
+    var widgetName = browser.getText('.widget-name');
+    expect(widgetName).toEqual("Alpha");
     pending();
   });
 }
